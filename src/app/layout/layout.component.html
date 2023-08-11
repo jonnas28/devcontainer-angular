@@ -1,0 +1,27 @@
+<nb-layout>
+    <nb-layout-header fixed>
+      <button nbButton ghost size="medium" (click)="toggle()">
+        <nb-icon [icon]="sideBarVisible ?  'menu-2-outline' : 'menu-outline'"></nb-icon>
+      </button>
+      <span>General Security</span> 
+      <div class="left">
+        <nb-toggle (checkedChange)="themeChanged($event)">
+          <nb-icon icon="moon-outline"></nb-icon>
+        </nb-toggle>
+      </div>
+    </nb-layout-header>
+    <nb-layout-header subheader>
+      <nb-actions>
+        <nb-action icon="home-outline"></nb-action>
+        <nb-action icon="search-outline"></nb-action>
+        <nb-action icon="edit-outline"></nb-action>
+      </nb-actions>
+    </nb-layout-header>
+  
+    <nb-sidebar>Sidebar Content </nb-sidebar>
+    
+    <nb-layout-column>
+      Page Content <button nbButton>Hello World</button>
+    </nb-layout-column>
+    <nb-layout-footer>Footer</nb-layout-footer>
+</nb-layout>
