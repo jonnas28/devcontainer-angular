@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NbSidebarService, NbThemeService } from '@nebular/theme';
+import { navigation } from '../app-navigation';
 
 @Component({
   selector: 'app-layout',
@@ -8,6 +9,7 @@ import { NbSidebarService, NbThemeService } from '@nebular/theme';
 })
 export class LayoutComponent {
   sideBarVisible=true;
+  navigationList = navigation;
   constructor(
     private sidebarService: NbSidebarService,
     private themeService:NbThemeService

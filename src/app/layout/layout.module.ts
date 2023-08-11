@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutComponent } from './layout.component';
-import { NbActionsModule, NbButtonModule, NbIconModule, NbLayoutModule, NbSidebarModule, NbToggleModule } from '@nebular/theme';
+import { NbActionsModule, NbButtonModule, NbIconModule, NbLayoutModule, NbMenuModule, NbSidebarModule, NbToggleModule } from '@nebular/theme';
 
 
 
@@ -15,6 +15,7 @@ import { NbActionsModule, NbButtonModule, NbIconModule, NbLayoutModule, NbSideba
     NbToggleModule,
     NbActionsModule,
     NbIconModule,
+    NbMenuModule.forRoot(),
     NbSidebarModule.forRoot(), //if this is your app.module
     NbButtonModule,
   ],

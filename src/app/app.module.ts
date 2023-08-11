@@ -7,10 +7,12 @@ import { NbThemeModule } from '@nebular/theme';
 import { LayoutModule } from './layout/layout.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { PermissionsComponent } from './pages/roles-permission/permissions/permissions.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PermissionsComponent
   ],
   imports: [
     BrowserModule,
