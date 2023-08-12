@@ -1,6 +1,12 @@
-# MyApp
+# Security App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+
+## Dev Environment
+
+Requirements
+- VS Code (Extensions: Remote Explorer by Microsoft)
+- Docker Desktop
 
 ## Development server
 
