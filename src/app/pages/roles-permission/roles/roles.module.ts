@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { RolesRoutingModule } from './roles-routing.module';
 import { RolesComponent } from './roles.component';
+import { NbCardModule, NbTreeGridModule } from '@nebular/theme';
 
 
 @NgModule({
@@ -11,7 +12,11 @@ import { RolesComponent } from './roles.component';
   ],
   imports: [
     CommonModule,
-    RolesRoutingModule
+    NbCardModule,
+    NbTreeGridModule,
+    RolesRoutingModule,
   ]
 })
 export class RolesModule { }
+
+

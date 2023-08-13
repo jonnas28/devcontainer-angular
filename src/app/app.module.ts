@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NbThemeModule } from '@nebular/theme';
+import { NbColumnsService, NbThemeModule } from '@nebular/theme';
 import { LayoutModule } from './layout/layout.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -22,7 +22,9 @@ import { PermissionsComponent } from './pages/roles-permission/permissions/permi
     NbEvaIconsModule,
     NbThemeModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    NbColumnsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
