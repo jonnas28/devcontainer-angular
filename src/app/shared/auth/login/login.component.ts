@@ -26,9 +26,10 @@ export class LoginComponent extends NbLoginComponent implements OnInit{
     // Your custom initialization logic here
   }
   override login() {
-    this.authService.authenticate('email') // Replace 'email' with your strategy name
+    this.authService.authenticate('email', this.user) // Replace 'email' with your strategy name
       .subscribe((authResult) => {
         // Handle authentication result
+        console.log(authResult);
       });
   }
 

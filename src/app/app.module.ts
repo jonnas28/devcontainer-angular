@@ -9,7 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { PermissionsComponent } from './pages/roles-permission/permissions/permissions.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NbPasswordAuthStrategy, NbAuthModule, NbAuthService, NbDummyAuthStrategy } from '@nebular/auth';
+import { NbPasswordAuthStrategy, NbAuthModule, NbAuthService, NbDummyAuthStrategy, NbAuthJWTToken } from '@nebular/auth';
+import { AuthGuardService } from './shared/guard/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -28,24 +29,32 @@ import { NbPasswordAuthStrategy, NbAuthModule, NbAuthService, NbDummyAuthStrateg
       strategies: [
         NbPasswordAuthStrategy.setup({
           name: 'email',
-         
           baseEndpoint: 'https://localhost:7117',
            login: {
-             // ...
              endpoint: '/api/Authenticate/login',
-             method:'post'
+             method:'post',
+             redirect:{
+              success:'/dashboard',
+              failure:'null'
+             }
            },
            register: {
              // ...
              endpoint: '/api/auth/register',
+             method:'post'
            },
+           token:{
+            class:NbAuthJWTToken,
+            key: 'token'
+           }
         }),
       ],
       forms: {},
     }),
   ],
   providers: [
-    NbColumnsService
+    NbColumnsService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
