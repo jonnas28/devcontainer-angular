@@ -4,18 +4,25 @@
         <nb-icon [icon]="sideBarVisible ?  'menu-2-outline' : 'menu-outline'"></nb-icon>
       </button>
       <span>General Security</span> 
-      <div class="left">
-        <nb-toggle (checkedChange)="themeChanged($event)">
-          <nb-icon icon="moon-outline"></nb-icon>
-        </nb-toggle>
-      </div>
+      <nb-user name="Nikita Poltoratsky"
+        title="full-stack developer"
+        [nbContextMenu]="items"
+        class="left"
+        nbContextMenuTag="my-context-menu">
+      </nb-user>
     </nb-layout-header>
     <nb-layout-header subheader>
       <nb-actions size="tiny">
         <nb-action icon="home-outline"></nb-action>
         <nb-action icon="search-outline"></nb-action>
         <nb-action icon="edit-outline"></nb-action>
+        <nb-action icon="power-outline"></nb-action>        
       </nb-actions>
+      <div class="left">
+        <nb-toggle (checkedChange)="themeChanged($event)">
+          <nb-icon icon="moon-outline"></nb-icon>
+        </nb-toggle>
+      </div>
     </nb-layout-header>
   
     <nb-sidebar>

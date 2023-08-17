@@ -26,9 +26,11 @@ export class LoginComponent extends NbLoginComponent implements OnInit{
     // Your custom initialization logic here
   }
   override login() {
-    this.authService.authenticate('email', this.user) // Replace 'email' with your strategy name
+    this.authService.authenticate('email', this.user)
       .subscribe((authResult) => {
-        // Handle authentication result
+        this.router.navigate([authResult.getRedirect()]).then(x=>{
+          window.location.reload();
+        });
         console.log(authResult);
       });
   }

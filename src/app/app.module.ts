@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NbColumnsService, NbThemeModule } from '@nebular/theme';
+import { NbColumnsService, NbDialogModule, NbThemeModule } from '@nebular/theme';
 import { LayoutModule } from './layout/layout.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -24,6 +24,7 @@ import { AuthGuardService } from './shared/guard/auth-guard.service';
     LayoutModule,
     AppRoutingModule,
     NbEvaIconsModule,
+    NbDialogModule.forChild(),
     NbThemeModule.forRoot(),
     NbAuthModule.forRoot({
       strategies: [
@@ -42,6 +43,13 @@ import { AuthGuardService } from './shared/guard/auth-guard.service';
              // ...
              endpoint: '/api/auth/register',
              method:'post'
+           },
+           logout:{
+            endpoint:'',
+            redirect:{
+              success:'/auth/login',
+              failure:'null'
+             }
            },
            token:{
             class:NbAuthJWTToken,
