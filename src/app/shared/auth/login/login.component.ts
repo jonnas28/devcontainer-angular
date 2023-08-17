@@ -31,7 +31,6 @@ export class LoginComponent extends NbLoginComponent implements OnInit{
         this.router.navigate([authResult.getRedirect()]).then(x=>{
           window.location.reload();
         });
-        console.log(authResult);
       });
   }
 

@@ -28,7 +28,17 @@ export class LayoutComponent implements OnInit {
     ){
     
   }
+  isDark:boolean=false;
   async ngOnInit(): Promise<void> {
+
+    const isDark = window.matchMedia("(prefers-color-scheme:dark)").matches
+    this.isDark = isDark;
+    if(isDark){
+      this.themeService.changeTheme('dark');
+    }else{
+      this.themeService.changeTheme('default')
+    }
+    
     this.nbMenuService.onItemClick()
       .pipe(
         filter(({ tag }) => tag === 'my-context-menu'),
@@ -42,10 +52,6 @@ export class LayoutComponent implements OnInit {
               window.location.reload();
             })
           })
-          // this.authService.isAuthenticated().subscribe(x=>{
-            
-          //   console.log(x);
-          // });
         }
       });
   }

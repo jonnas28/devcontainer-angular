@@ -19,7 +19,7 @@
         <nb-action icon="power-outline"></nb-action>        
       </nb-actions>
       <div class="left">
-        <nb-toggle (checkedChange)="themeChanged($event)">
+        <nb-toggle (checkedChange)="themeChanged($event)" [(checked)]="isDark">
           <nb-icon icon="moon-outline"></nb-icon>
         </nb-toggle>
       </div>
