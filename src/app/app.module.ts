@@ -9,13 +9,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { PermissionsComponent } from './pages/roles-permission/permissions/permissions.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NbPasswordAuthStrategy, NbAuthModule, NbAuthService, NbDummyAuthStrategy, NbAuthJWTToken } from '@nebular/auth';
+import { NbPasswordAuthStrategy, NbAuthModule, NbAuthJWTToken } from '@nebular/auth';
 import { AuthGuardService } from './shared/guard/auth-guard.service';
+import { ApiClient } from './shared/services/ApiClient';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PermissionsComponent
+    PermissionsComponent,
   ],
   imports: [
     HttpClientModule,
@@ -62,7 +63,8 @@ import { AuthGuardService } from './shared/guard/auth-guard.service';
   ],
   providers: [
     NbColumnsService,
-    AuthGuardService
+    AuthGuardService,
+    ApiClient
   ],
   bootstrap: [AppComponent]
 })

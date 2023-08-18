@@ -1,0 +1,12 @@
+<table [nbTreeGrid]="dataSource" [nbSort]="dataSource" (sort)="updateSort($event)">
+    <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="columns"></tr>
+    <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: columns"></tr>
+
+    <ng-container *ngFor="let column of columns; let index = index"
+                  [nbTreeGridColumnDef]="column">
+      <th nbTreeGridHeaderCell [nbSortHeader]="getSortDirection(column)" *nbTreeGridHeaderCellDef>
+        {{column}}
+      </th>
+      <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row | json }}</td>
+    </ng-container>
+</table>
