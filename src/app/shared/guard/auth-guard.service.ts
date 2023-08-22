@@ -12,12 +12,13 @@ export class AuthGuardService implements CanActivate {
   }
 
   async canActivate() {
-    let res = await lastValueFrom(this.authService.isAuthenticated())
-    if (res) {
-      return true;
-    } else {
-      this.router.navigate(['/auth/login']); // Redirect to login if not authenticated
-      return false;
-    }
+    return true;
+    // let res = await lastValueFrom(this.authService.isAuthenticated())
+    // if (res) {
+    //   return true;
+    // } else {
+    //   this.router.navigate(['/auth/login']); // Redirect to login if not authenticated
+    //   return false;
+    // }
   }
 }

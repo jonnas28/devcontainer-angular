@@ -16,9 +16,9 @@ export class AppComponent extends PageDestroy implements OnInit {
   constructor(private authService:NbAuthService) {
     super();
   }
-  isLoggedIn:boolean=false;
+  isLoggedIn:boolean=true;
   async ngOnInit(): Promise<void> {
-    this.isLoggedIn = await lastValueFrom(this.authService.isAuthenticated())  
+    // this.isLoggedIn = await lastValueFrom(this.authService.isAuthenticated())
   }
   title = 'General Security';
 }
